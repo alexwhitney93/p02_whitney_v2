@@ -44,10 +44,10 @@ public class Game extends AppCompatActivity
         setContentView(R.layout.activity_game);
         tv=(TextView) findViewById(R.id.Score);
         grid=(GridView)findViewById(R.id.gamebackground);
-        Random random1=new Random();
-        int r1 = random1.nextInt(16-1+1)+1;
-        Random random2=new Random();
-        int r2 = random2.nextInt(16-1+1)+1;
+        Random random1 = new Random();
+        int r1 = random1.nextInt(16)+1;
+        Random random2 = new Random();
+        int r2 = random2.nextInt(16)+1;
         if(r1==r2 && r2!=16)
         {
             r2++;
@@ -66,7 +66,7 @@ public class Game extends AppCompatActivity
         int[] choice={2,4};
         int ind1 = r3.nextInt(choice.length);
         int ind2 = r3.nextInt(choice.length);
-        for(int i=0 ;i<nums.length;i++)
+        for(int i = 0;i<nums.length;i++)
         {
             if(Integer.parseInt(nums[i])==r1)
             {
@@ -76,7 +76,7 @@ public class Game extends AppCompatActivity
             {
                 map.put(nums[i],choice[ind2]);
             }
-            if(Integer.parseInt(nums[i])!=r2 && Integer.parseInt(nums[i])!=r1)
+            if(Integer.parseInt(nums[i])!= r2 && Integer.parseInt(nums[i])!= r1)
             {
                 map.put(nums[i],0);
             }
@@ -94,10 +94,8 @@ public class Game extends AppCompatActivity
                 Log.i("TAG","TOP");
                 Log.i("TAG",map.toString());
                 Log.i("TAG",checkTop(1) +" "+ checkTop(2) +" "+ checkTop(3) +" "+ checkTop(4));
-                int k = 0;
                 while(!(checkTop(1) && checkTop(2) && checkTop(3) && checkTop(4)))
                 {
-                    k = 1;
                     for(int i = 16; i > 4; i--)
                     {
                         int j = i;
@@ -449,7 +447,7 @@ public class Game extends AppCompatActivity
 
                 tv.setId(position);
                 // Set the TextView background color
-                tv.setBackgroundColor(Color.parseColor("#b2dfdb"));
+                tv.setBackgroundColor(Color.parseColor("#356df0"));
                 // Return the TextView widget as GridView item
                 return tv;
             }

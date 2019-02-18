@@ -6,6 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
         android:orientation="vertical">
 
         <TextView
@@ -14,7 +15,9 @@
             android:layout_height="200dp"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="100dp"
-            android:text="TextView" />
+            android:background="@color/textBackgroundColor"
+            android:text="TextView"
+            android:textColor="@color/textColor" />
 
         <Button
             android:id="@+id/resultsButton"
@@ -23,6 +26,7 @@
             android:layout_marginLeft="150dp"
             android:layout_marginTop="100dp"
             android:gravity="center"
+            android:onClick="retry"
             android:text="Button" />
 
     </LinearLayout>
